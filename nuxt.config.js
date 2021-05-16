@@ -47,10 +47,13 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
-      white: true,
+      light: true,
+      options: {
+        customProperties: true
+      },
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: '#5AA895',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
@@ -58,8 +61,8 @@ export default {
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
         },
-        white: {
-          primary: colors.blue,
+        light: {
+          primary: '#5AA895',
           accent: colors.grey,
           secondary: colors.amber,
           info: colors.teal.lighten1,
