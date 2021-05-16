@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -9,7 +9,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in nav_items"
           :key="i"
           :to="item.to"
           router
@@ -30,32 +30,32 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
+      </v-btn> -->
+      <!-- <v-btn
         icon
         @click.stop="clipped = !clipped"
       >
         <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
+      </v-btn> -->
+      <!-- <v-btn
         icon
         @click.stop="fixed = !fixed"
       >
         <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
     <v-main>
       <v-container>
@@ -84,6 +84,43 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
+
+      <div class="text-center">
+        <v-bottom-sheet v-model="sheet">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              color="cone"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon>mdi-share-variant</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-subheader>Share</v-subheader>
+            <v-list-item
+              v-for="tile in share_tiles"
+              :key="tile.title"
+              :to="tile.to"
+              @click="sheet = false"
+            >
+              <!-- <v-list-item-action>
+                <v-icon>{{ tile.icon }}</v-icon>
+              </v-list-item-action> -->
+              <v-list-item-avatar>
+                <v-avatar
+                  size="32px"
+                  tile
+                >
+                  <v-icon>{{ tile.icon }}</v-icon>
+                </v-avatar>
+              </v-list-item-avatar>
+              <v-list-item-title>{{ tile.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-bottom-sheet>
+      </div>
+
     </v-footer>
   </v-app>
 </template>
@@ -95,7 +132,12 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: "Haruaki's Portfolio",
+      sheet: false,
+      nav_items: [
         {
           icon: 'mdi-apps',
           title: 'Welcome',
@@ -107,10 +149,13 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      share_tiles: [
+        { 
+          icon: 'mdi-twitter',
+          title: 'tweet',
+          to: '/'
+        },
+      ],
     }
   }
 }
