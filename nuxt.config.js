@@ -78,4 +78,12 @@ export default {
   build: {
   },
 
+  router: {
+    base: '/nuxt_learn/'
+  },
+
+  generate: {
+    dir: 'docs'
+  },
+
 }
