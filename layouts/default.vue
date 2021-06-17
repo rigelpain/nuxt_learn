@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,13 +23,13 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-app-bar
       :clipped-left="clipped"
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
       <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -138,19 +138,24 @@ export default {
       title: "Haruaki's Portfolio",
       sheet: false,
       nav_items: [
+        // {
+        //   icon: 'mdi-apps',
+        //   title: 'Welcome',
+        //   to: '/'
+        // },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Inspire',
+        //   to: '/inspire'
+        // },
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Portfolio Design',
+          to: '/portfolio_design'
         }
       ],
       share_tiles: [
-        { 
+        {
           icon: 'mdi-twitter',
           title: 'tweet',
           to: '/'
