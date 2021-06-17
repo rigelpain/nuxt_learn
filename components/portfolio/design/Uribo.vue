@@ -9,7 +9,7 @@
             <li><v-btn small block depressed color="white" @click="goTo('#overview')">URIBOってなに？</v-btn></li>
             <li><v-btn small block depressed color="white" @click="goTo('#userstory')">ユーザーストーリー</v-btn></li>
             <li><v-btn small block depressed color="white" @click="goTo('#process')">URIBOができるまで</v-btn></li>
-            <li><v-btn small block depressed color="white" @click="goTo('#point')">URIBOのポイント</v-btn></li>
+            <li><v-btn small block depressed color="white" @click="goTo('#points')">URIBOのポイント</v-btn></li>
             <li><v-btn small block depressed color="white" @click="goTo('#work')">担当した箇所</v-btn></li>
           </ul>
         </li>
@@ -23,7 +23,7 @@
         </h1>
         <img
           :class="$style.mainViewImg"
-          src="/images/uribo_mainview.png"
+          src="~/static/images/uribo_mainview.png"
         />
         <p :class="$style.mainViewCopy">
           家事もお風呂も、「腰を上げるまで」が一番めんどくさい... <br>
@@ -347,11 +347,49 @@
             </v-timeline-item>
           </v-timeline>
         </div>
-        <div :class="$style.thinkingProcessIssue">
-          <h3>そうしてできたのがURIBO</h3>
+        <div :class="$style.thinkingProcessProduct">
+          <h3>3. そうしてできたのがURIBO</h3>
+          <img src="" alt="">
+          <section id="points">
+            <h3>推しポイント</h3>
+            <v-row>
+              <v-col
+                v-for="(point, i) in points"
+                :key="i"
+                class="d-flex"
+                cols="12"
+                sm="12"
+                md="6"
+                lg="3"
+              >
+                <v-card
+                  class="mx-auto"
+                >
+                  <v-img
+                    :src="point.img"
+                    :aspect-ratio="4/3"
+                  ></v-img>
+                  <v-card-title>
+                    {{ point.title }}
+                  </v-card-title>
+                  <v-card-subtitle>
+                    {{ point.subtitle }}
+                  </v-card-subtitle>
+                  <v-card-text>
+                    {{ point.text }}
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </section>
+          <section id="work">
+            <h3>担当した箇所</h3>
+            <div>
+              
+            </div>
+          </section>
         </div>
       </section>
-
     </div>
   </div>
 </template>
@@ -364,9 +402,35 @@ export default {
   data() {
     return {
       windowWidth : 0,
-      breakpoint: 600,
+      breakpoints: 600,
       fab: false,
       e1: 1,
+      points: [
+        {
+          title: 'アプリで簡単',
+          subtitle: 'スケジュールをアプリで入力',
+          text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
+          img: '/images/meow.png',
+        },
+        {
+          title: 'NFC通信 - 1',
+          subtitle: 'URIBOたちの内部側面にNFCリーダー/タグを搭載',
+          text: '手を合わせるように隣に置くとNFCを読み取りおしゃべりを始めます。',
+          img: '/images/image2',
+        },
+        {
+          title: 'NFC通信 - 2',
+          subtitle: 'CHEBOの上面内部とぼうしにもNFCリーダー/タグを搭載',
+          text: 'CHEBOはぼうしから自分の仕事を読み取ってアプリに情報を送信します。',
+          img: '/images/image3',
+        },
+        {
+          title: 'Wi-Fi通信',
+          subtitle: 'Wi-Fiを通してアプリで設定した情報を受け取る',
+          text: 'URIBOはアプリで設定されたスリープ状態やスケジュールを受け取りアラームの役割をします',
+          img: '/images/image3',
+        },
+      ],
     }
   },
   watch: {
@@ -406,15 +470,15 @@ export default {
     padding: 3px;
 }
 .sideNav {
-  width: 150px;
+  width: auto;
   font-size: 14px;
 }
 .main {
   max-width: 1000px;
-  margin: 0 200px;
+  width: 100%;
+  margin: 0 20px;
   &Wrap {
     display: flex;
-
   }
 }
 .mainView {

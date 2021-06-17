@@ -37,12 +37,12 @@
         <v-stepper-content
           :step="2"
         >
-          <Cheers />
+          <Uribo />
         </v-stepper-content>
         <v-stepper-content
           :step="3"
         >
-          <LightBottle />
+          <Uribo />
         </v-stepper-content>
       </v-stepper-items>
       <v-stepper-header>
