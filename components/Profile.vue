@@ -7,7 +7,7 @@
           size="200"
         >
           <img
-            src="~/static/images/meow.png"
+            src="/images/meow.png"
             alt="Meowow"
           >
         </v-avatar>
@@ -25,7 +25,6 @@
           <span :class="$style.ja">陽昭</span>
           <span :class="$style.en">Ｈａｒｕａｋｉ</span>
         </div>
-        <!-- <span :class="$style.profileCardNameSub">Kobayashi Haruaki</span> -->
       </div>
       <p :class="$style.profileCardDescription">モノづくりが好き。過去にHackUやGGJに参加しており、開発では企画・デザイン・フロントエンド・プレゼンを担当することが多いです。身近な課題をユニークなプロダクトで解決するべく、はこだて未来大学でデザインを学んでいます。</p>
       <div :class="$style.profileCardMore">
@@ -48,7 +47,7 @@
 </template>
 
 <style module lang="scss">
-@import "~assets/variables.scss";
+@import "~/assets/variables.scss";
 
 .profile {
   width: 1000px;
