@@ -7,7 +7,7 @@
           size="200"
         >
           <img
-            src="/images/meow.png"
+            src="~/static/images/meow.png"
             alt="Meowow"
           >
         </v-avatar>

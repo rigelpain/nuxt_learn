@@ -18,7 +18,7 @@
     <div :class="$style.main">
       <section :class="$style.mainView">
         <h1 :class="$style.title">
-          01　URIBO
+          01 URIBO
           <span :class="$style.titleSub">- 生活習慣を整えるロボット -</span>
         </h1>
         <img
@@ -31,7 +31,7 @@
           URIBOたちと暮らすだけで「めんどくさがり」が少しづつ治っていきます
         </p>
         <p :class="$style.mainViewPlace">
-          授業「情報デザイン2」 にてチーム製作したプロダクト
+          授業「情報デザイン2」 にてチーム製作したプロダクト<br>
           テーマは「クラウドファンディングを想定した健康に関わるプロダクト」
         </p>
       </section>
@@ -103,7 +103,7 @@
 
           <v-stepper-items>
             <v-stepper-content step="1">
-              <img src="" alt="" :class="$style.userstoryStepImg">
+              <img src="~/static/images/uribo_mainview.png" alt="" :class="$style.userstoryStepImg">
               <div :class="$style.userstoryStepDesc">
                 <p>
                   自分の苦手なタスクの場所にCHEBOを置き、<br>
@@ -118,7 +118,7 @@
               </v-btn>
             </v-stepper-content>
             <v-stepper-content step="2">
-              <img src="" alt="" :class="$style.userstoryStepImg">
+              <img src="~/static/images/uribo_mainview.png" alt="" :class="$style.userstoryStepImg">
               <div :class="$style.userstoryStepDesc">
                 <p>
                   URIBOにあなたの1日を教えてあげます。
@@ -137,7 +137,7 @@
               </v-btn>
             </v-stepper-content>
             <v-stepper-content step="3">
-              <img src="" alt="" :class="$style.userstoryStepImg">
+              <img src="~/static/images/uribo_mainview.png" alt="" :class="$style.userstoryStepImg">
               <div :class="$style.userstoryStepDesc">
                 <p>
                   設定したタスクの時間が来るとYEBOとCHEBOが呼び合います。<br>
@@ -157,26 +157,28 @@
               </v-btn>
             </v-stepper-content>
             <v-stepper-content step="4">
-              <img src="" alt="" :class="$style.userstoryStepImg">
+              <img src="~/static/images/uribo_mainview.png" alt="" :class="$style.userstoryStepImg">
               <div :class="$style.userstoryStepDesc">
                 <p>
                   あなたの傍にいるYEBOをCHEBOまでハコんであげましょう。
                 </p>
               </div>
-              <v-btn
-                @click="e1 = 3"
-              >
-                prev
-              </v-btn>
-              <v-btn
-                color="primary"
-                @click="e1 = 5"
-              >
-                Next >
-              </v-btn>
+              <div class="d-flex justify-space-between">
+                <v-btn
+                  @click="e1 = 3"
+                >
+                  prev
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  @click="e1 = 5"
+                >
+                  Next >
+                </v-btn>
+              </div>
             </v-stepper-content>
             <v-stepper-content step="5">
-              <img src="" alt="" :class="$style.userstoryStepImg">
+              <img src="~/static/images/uribo_mainview.png" alt="" :class="$style.userstoryStepImg">
               <div :class="$style.userstoryStepDesc">
                 <p>
                   URIBOのごきげんなおしゃべりをBGMに、<br>
@@ -349,7 +351,7 @@
         </div>
         <div :class="$style.thinkingProcessProduct">
           <h3>3. そうしてできたのがURIBO</h3>
-          <img src="" alt="">
+          <img src="/images/uribo_mainview.png" alt="">
           <section id="points">
             <h3>推しポイント</h3>
             <v-row>
@@ -384,9 +386,38 @@
           </section>
           <section id="work">
             <h3>担当した箇所</h3>
-            <div>
-              
-            </div>
+            <v-row>
+              <v-col
+                v-for="(work, i) in works"
+                :key="i"
+                class="d-flex"
+                cols="12"
+                sm="12"
+                md="12"
+                lg="6"
+              >
+                <v-card
+                  class="mx-auto"
+                >
+                  <v-img
+                    :src="work.img"
+                    :aspect-ratio="4/3"
+                  ></v-img>
+                  <v-card-title>
+                    {{ work.title }}
+                  </v-card-title>
+                  <v-card-subtitle>
+                    {{ work.subtitle }}
+                  </v-card-subtitle>
+                  <v-card-text>
+                    {{ work.text }}
+                  </v-card-text>
+                  <v-card-text>
+                    {{ work.text2 }}
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
           </section>
         </div>
       </section>
@@ -410,25 +441,40 @@ export default {
           title: 'アプリで簡単',
           subtitle: 'スケジュールをアプリで入力',
           text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
-          img: '/images/meow.png',
+          img: '~/static/images/meow.png',
         },
         {
           title: 'NFC通信 - 1',
           subtitle: 'URIBOたちの内部側面にNFCリーダー/タグを搭載',
           text: '手を合わせるように隣に置くとNFCを読み取りおしゃべりを始めます。',
-          img: '/images/image2',
+          img: '~/static/images/meow.png',
         },
         {
           title: 'NFC通信 - 2',
           subtitle: 'CHEBOの上面内部とぼうしにもNFCリーダー/タグを搭載',
           text: 'CHEBOはぼうしから自分の仕事を読み取ってアプリに情報を送信します。',
-          img: '/images/image3',
+          img: '~/static/images/meow.png',
         },
         {
           title: 'Wi-Fi通信',
           subtitle: 'Wi-Fiを通してアプリで設定した情報を受け取る',
           text: 'URIBOはアプリで設定されたスリープ状態やスケジュールを受け取りアラームの役割をします',
-          img: '/images/image3',
+          img: '~/static/images/meow.png',
+        },
+      ],
+      works: [
+        {
+          title: 'アイデア',
+          subtitle: 'グループリーダーとして課題設定から課題解決法の検討など',
+          text: 'まず、「健康」というテーマから様々な要素を抽出しましたが、そのなかでも体調管理を時計によって解決するとグループメンバー全員で方向性を定めました。「時計」「体調管理」「健康」などのキーワードを基にブレインストーミングで発散し、KJ法により収束させました。最終的に私発案の「運んじゃう時計」が採用されましたが、他にも触っちゃう、眺めちゃう時計を提案し、いずれも自分以外のものに強制されてアクションするものでなく、あくまでユーザーの自発的なアクションの火付けとなるものを作りたいと考えていました。そのためユーザーの行動をうまく引き出す、つまり〇〇しちゃうものを作りたい！と思い初期案「ture teku」を発案しました。',
+          text2: 'また、初期案ではハコをハコが望む環境につれてくというものでした。たとえば温度の高いところや狭いところに行きたがる猫のようなハコを考えていたのですが、家の中をうろうろする目的は達成できてもそこから家事に繋がりにくいという懸念があったため、台所や脱衣所にビーコンとなる子機を置き、常に携帯する親機をそこへ連れて行くという形へとブラッシュアップされました。さらに、ハコ同士が仲のいい友達であるという設定を付加することでハコんで会わせてあげるストーリー性が生まれよりアイらしいものになったかと思います。',
+          img: '~/static/images/meow.png',
+        },
+        {
+          title: 'Webサイト',
+          subtitle: 'クラファンサイトのコーディング',
+          text: 'クラウドファンディングを想定したプロダクトの提案だったため、広報と支援を募るためのクラファンサイトを製作しました。仕様技術はHTML,CSS,JSでレスポンシブ対応しています。ヒーローでは健康で爽やかな生活を感じる画像を用いて、URIBOにより丁寧な暮らしを得た後のビジョンを想像してもらうことで興味や購買意欲を高めようとしています。支援額などクラファン特有のパーツはCAMPFIREを参考にマテリアルデザインを用いました。サイト内の動画は同グループの別メンバーによる製作です。',
+          img: '~/static/images/meow.png',
         },
       ],
     }
@@ -463,8 +509,16 @@ export default {
 </script>
 
 <style module  lang="scss">
+section:not(:first-child) {
+  margin-top: 30px;
+}
+h2 {
+  font-size: 36px;
+}
 .wrapper {
   display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 .title {
     padding: 3px;
@@ -474,21 +528,47 @@ export default {
   font-size: 14px;
 }
 .main {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 20px;
+  width: 900px;
+  padding: 0 20px;
+  margin: 0 auto;
   &Wrap {
     display: flex;
+    width: 100%;
   }
 }
 .mainView {
   width: 700px;
   height: auto;
+  .title {
+    font-size: 60px;
+    &Sub {
+      font-size: 20px;
+    }
+  }
+  &Img {
+    width: 100%;
+  }
+  &Copy {
+    font-size: 20px;
+    line-height: 2em;
+  }
+  &Place {
+    display: inline;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 2em;
+  }
+}
+.overview {
+  margin-top: 50px;
+  p {
+    font-size: 20px;
+  }
 }
 .userstory {
   &Step {
     &Desc {
-      padding: 20px 50px;
+      padding: 20px 50px 5px;
       color: $white;
       background-color: $darkgray;
       p {
