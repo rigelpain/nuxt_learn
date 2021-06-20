@@ -375,7 +375,7 @@ export default {
           title: 'ビジュアル',
           subtitle: 'スケジュールをアプリで入力',
           text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
-          img: '~/static/images/meow.png',
+          img: '/images/meow.png',
         },
         {
           title: 'キュートなボイス',
@@ -433,7 +433,7 @@ export default {
         {
           step: 1,
           title: '',
-          img: '/images/meow.png',
+          img: require('~/static/images/meow.png'),
           text: '自分の苦手なタスクの場所にCHEBOを置き、帽子のアタッチメントを付けてお仕事をあげます。',
           position: 'first',
         },
