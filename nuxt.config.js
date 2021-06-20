@@ -108,7 +108,7 @@ export default {
   },
 
   router: {
-    base: '/portfolio/'
+    base: '/nuxt_learn/'
   },
 
   generate: {
