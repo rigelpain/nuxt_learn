@@ -23,7 +23,7 @@
           01 URIBO
           <span :class="$style.titleSub">- 生活習慣を整えるロボット -</span>
         </h1>
-        <img src="/images/uribo_mainview.png" alt="">
+        <img src="~/static/images/uribo_mainview.png" alt="">
         <p :class="$style.mainViewCopy">
           家事もお風呂も、「腰を上げるまで」が一番めんどくさい... <br>
           ゲームや趣味に夢中になって家事や睡眠を後回しにしがちなあなた <br>
@@ -375,7 +375,7 @@ export default {
           title: 'ビジュアル',
           subtitle: 'スケジュールをアプリで入力',
           text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
-          img: '/images/meow.png',
+          img: '~/static/images/meow.png',
         },
         {
           title: 'キュートなボイス',
