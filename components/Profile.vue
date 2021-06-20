@@ -34,11 +34,11 @@
           最近原付を買って遠出が楽しくなった
         </p>
         <div :class="$style.profileCardMoreAccount">
-          <v-btn icon color="green">
-            <v-icon>mdi-heart</v-icon>
+          <v-btn icon color="green" href="https://github.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon>fab fa-github-alt</v-icon>
           </v-btn>
-          <v-btn icon color="green">
-            <v-icon>mdi-heart</v-icon>
+          <v-btn icon color="green" href="https://twitter.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon>fab fa-twitter</v-icon>
           </v-btn>
         </div>
       </div>
@@ -134,6 +134,10 @@
         border-top: 2px $white solid;
         border-bottom: 2px $white solid;
         font-weight: bold;
+      }
+      &Account {
+        display: flex;
+        justify-content: space-evenly;
       }
     }
   }
