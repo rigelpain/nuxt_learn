@@ -38,7 +38,7 @@
 
       <section :class="$style.overview" id="overview">
         <h2>URIBOってなに？</h2>
-        <img src="/images/uribo/uribo_top.png" alt="">
+        <img src="~/static/images/uribo/uribo_top.png" alt="">
         <p :class="$style.overviewDesc">
           自分では動けないハコを家の中でハコびます。
         </p>
