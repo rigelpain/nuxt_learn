@@ -381,7 +381,7 @@ export default {
           title: 'キュートなボイス',
           subtitle: 'スケジュールをアプリで入力',
           text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
-          img: require('~/static/images/meow.png'),
+          img: require('@/static/images/meow.png'),
         },
         {
           title: 'いきものらしさ',
