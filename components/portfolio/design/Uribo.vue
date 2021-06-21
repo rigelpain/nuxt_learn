@@ -23,7 +23,7 @@
           01 URIBO
           <span :class="$style.titleSub">- 生活習慣を整えるロボット -</span>
         </h1>
-        <img src="~/static/images/uribo_mainview.png" alt="">
+        <img src="~/static/images/uribo/uribo_mainview.png" alt="">
         <p :class="$style.mainViewCopy">
           家事もお風呂も、「腰を上げるまで」が一番めんどくさい... <br>
           ゲームや趣味に夢中になって家事や睡眠を後回しにしがちなあなた <br>
@@ -38,7 +38,7 @@
 
       <section :class="$style.overview" id="overview">
         <h2>URIBOってなに？</h2>
-        <img src="/images/uribo_mainview.png" alt="">
+        <img src="/images/uribo/uribo_top.png" alt="">
         <p :class="$style.overviewDesc">
           自分では動けないハコを家の中でハコびます。
         </p>
@@ -275,7 +275,7 @@
 
       <section :class="$style.product">
         <h2>そうしてできたのがURIBO</h2>
-        <img src="/images/uribo_mainview.png" alt="">
+        <img src="/images/uribo/uribo_mainview.png" alt="">
       </section>
 
       <section id="points">
@@ -381,7 +381,7 @@ export default {
           title: 'キュートなボイス',
           subtitle: 'スケジュールをアプリで入力',
           text: 'URIBOたちのスリープや今日の家事予定も簡単確認。',
-          img: require('@/static/images/meow.png'),
+          img: require('~/static/images/meow.png'),
         },
         {
           title: 'いきものらしさ',
@@ -433,7 +433,7 @@ export default {
         {
           step: 1,
           title: '',
-          img: require('~/static/images/meow.png'),
+          img: require('~/static/images/uribo/uribo_custom.png'),
           text: '自分の苦手なタスクの場所にCHEBOを置き、帽子のアタッチメントを付けてお仕事をあげます。',
           position: 'first',
         },
