@@ -21,7 +21,9 @@
     "nuxt": "^2.15.3",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-webfontloader": "^1.1.0",
-    "vue-scroll": "^2.1.13"
+    "vue-scroll": "^2.1.13",
+    "vue-sticky": "^3.3.4",
+    "vue-sticky-directive": "^0.0.10"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

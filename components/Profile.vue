@@ -34,17 +34,18 @@
           最近原付を買って遠出が楽しくなった
         </p>
         <div :class="$style.profileCardMoreAccount">
-          <v-btn icon color="green" href="https://github.com/rigelpain" target="_blank" rel="noopener noreferrer">
-            <v-icon>fab fa-github-alt</v-icon>
+          <v-btn fab color="primaryLight" href="https://github.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon color="brown darken-4" size="30">fab fa-github-alt</v-icon>
           </v-btn>
-          <v-btn icon color="green" href="https://twitter.com/rigelpain" target="_blank" rel="noopener noreferrer">
-            <v-icon>fab fa-twitter</v-icon>
+          <v-btn fab color="primaryLight" href="https://twitter.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon color="brown darken-4" size="30">fab fa-twitter</v-icon>
           </v-btn>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <style module lang="scss">
 @import "~/assets/variables.scss";

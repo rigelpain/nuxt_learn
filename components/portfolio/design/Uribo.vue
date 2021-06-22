@@ -19,7 +19,7 @@
 
 
       <section :class="$style.mainView">
-        <h1 :class="$style.title">
+        <h1 :class="$style.title" color="white">
           01 URIBO
           <span :class="$style.titleSub">- 生活習慣を整えるロボット -</span>
         </h1>
@@ -64,16 +64,19 @@
       </section>
       <section :class="$style.userstory" id="userstory">
         <h2>ユーザーストーリー</h2>
-        <v-stepper non-linear  v-model="e1">
+        <v-stepper non-linear  v-model="e1" class="mt-30">
           <v-stepper-header>
-            <v-stepper-step
+            <div
               v-for="(userstory, i) in userstorys"
               :key="i"
-              x-large
-              editable
-              :step= "userstory.step"
             >
-            </v-stepper-step>
+              <v-stepper-step
+                x-large
+                editable
+                :step= "userstory.step"
+              >
+              </v-stepper-step>
+            </div>
           </v-stepper-header>
           <v-stepper-items
             aria-setsize=""
@@ -208,6 +211,23 @@
                     サボり癖に共通するのは、動き始めてしまえばなんてことないということ。<br>
                     強制されるより、自発的に生活習慣を改善して欲しい。
                   </div>
+                  <v-card
+                    :class="$style.timelineCard"
+                  >
+                    <v-img
+                      src="/images/meow.png"
+                      :aspect-ratio="4/3"
+                    ></v-img>
+                    <v-card-title>
+                      ブレスト
+                    </v-card-title>
+                    <v-card-subtitle>
+                      miro
+                    </v-card-subtitle>
+                    <v-card-text>
+                      うぇい
+                    </v-card-text>
+                  </v-card>
                 </v-col>
               </v-row>
             </v-timeline-item>
@@ -504,10 +524,14 @@ section:not(:first-child) {
 h2 {
   font-size: 36px;
 }
+img {
+  max-width: 860px;
+}
 .wrapper {
   display: flex;
   margin: 0 auto;
   justify-content: center;
+  overflow: visible;
 }
 .title {
     padding: 3px;
@@ -515,6 +539,11 @@ h2 {
 .sideNav {
   width: 180px;
   font-size: 14px;
+  position: sticky !important;
+  top: 160px;
+  z-index: 100;
+  height: 500px;
+  overflow: visible;
 }
 .main {
   width: 900px;
@@ -581,5 +610,8 @@ h2 {
   &Solution {
     margin-top: 30px;
   }
+}
+.timelineCard {
+  margin-top: 20px;
 }
 </style>

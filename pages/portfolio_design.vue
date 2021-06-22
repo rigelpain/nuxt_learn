@@ -1,8 +1,8 @@
 <template>
   <div>
     <Profile />
-    <v-stepper non-linear width="1000px">
-      <v-stepper-header>
+    <v-stepper non-linear width="1000px" :class="$style.stepper">
+      <v-stepper-header :class="$style.stepperHeader">
         <v-stepper-step
           editable
           step="1"
@@ -25,12 +25,13 @@
           step="3"
           editable
         >
-          Light Bottle - 水のように光が溜まるボトル -
+          Light Bottle - 光が溜まるボトル -
         </v-stepper-step>
       </v-stepper-header>
-      <v-stepper-items>
+      <v-stepper-items :class="$style.stepperItems">
         <v-stepper-content
           :step="1"
+          :class="$style.stepperContent"
         >
           <Uribo />
         </v-stepper-content>
@@ -45,32 +46,6 @@
           <Uribo />
         </v-stepper-content>
       </v-stepper-items>
-      <v-stepper-header>
-        <v-stepper-step
-          editable
-          step="1"
-        >
-          URIBO - 生活習慣を整えるロボット -
-        </v-stepper-step>
-
-        <v-divider></v-divider>
-
-        <v-stepper-step
-          editable
-          step="2"
-        >
-          Cheers - パーティーを盛り上げるグラス -
-        </v-stepper-step>
-
-        <v-divider></v-divider>
-
-        <v-stepper-step
-          step="3"
-          editable
-        >
-          Light Bottle - 水のように光が溜まるボトル -
-        </v-stepper-step>
-      </v-stepper-header>
     </v-stepper>
   </div>
 </template>
@@ -93,6 +68,7 @@ export default {
       fab: false,
       e1: 1,
       steps: 3,
+      steppHeaderScrollY: 500,
     }
   },
   watch: {
@@ -120,6 +96,10 @@ export default {
     calculateWindowWidth() {
       this.windowWidth = window.innerWidth;
     },
+    handleScroll() {
+      this.steppHeaderScrollY = window.scrollY;
+      console.log(this.steppHeaderScrollY);
+    },
   },
   components: {
     Logo,
@@ -132,6 +112,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.calculateWindowWidth);
+    window.addEventListener('scroll', this.handleScroll);
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.calculateWindowWidth);
@@ -141,5 +122,26 @@ export default {
 
 <style module lang="scss">
 @import "~assets/variables.scss";
+
+.stepper {
+  overflow: visible;
+  margin-bottom: 50px;
+  &Header {
+    position: sticky !important;
+    top: 64px;
+    z-index: 100;
+    background-color: $white;
+  }
+  &Items {
+    overflow: visible;
+  }
+  &Content {
+    overflow: visible;
+  }
+}
+
+.v-stepper__wrapper {
+  overflow: visible;
+}
 
 </style>
