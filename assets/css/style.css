@@ -20,6 +20,14 @@ p {
   margin: 0;
 }
 
+.v-stepper {
+  overflow: visible !important;
+}
+
 .v-stepper__wrapper {
+  overflow: visible !important;
+}
+
+.v-stepper__items {
   overflow: visible !important;
 }
