@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Profile />
     <v-stepper non-linear width="1000px" :class="$style.stepper">
       <v-stepper-header :class="$style.stepperHeader">
         <v-stepper-step
