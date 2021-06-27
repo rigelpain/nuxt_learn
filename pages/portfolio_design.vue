@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Profile />
     <v-stepper non-linear width="1000px" :class="$style.stepper">
       <v-stepper-header :class="$style.stepperHeader">
         <v-stepper-step
@@ -132,15 +133,15 @@ export default {
     background-color: $white;
   }
   &Items {
-    overflow: visible;
+    overflow: visible !important;
   }
   &Content {
-    overflow: visible;
+    overflow: visible !important;
   }
 }
 
 .v-stepper__wrapper {
-  overflow: visible;
+  overflow: visible !important;
 }
 
 </style>
