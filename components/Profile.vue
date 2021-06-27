@@ -25,7 +25,6 @@
           <span :class="$style.ja">陽昭</span>
           <span :class="$style.en">Ｈａｒｕａｋｉ</span>
         </div>
-        <!-- <span :class="$style.profileCardNameSub">Kobayashi Haruaki</span> -->
       </div>
       <p :class="$style.profileCardDescription">モノづくりが好き。過去にHackUやGGJに参加しており、開発では企画・デザイン・フロントエンド・プレゼンを担当することが多いです。身近な課題をユニークなプロダクトで解決するべく、はこだて未来大学でデザインを学んでいます。</p>
       <div :class="$style.profileCardMore">
@@ -35,11 +34,11 @@
           最近原付を買って遠出が楽しくなった
         </p>
         <div :class="$style.profileCardMoreAccount">
-          <v-btn icon color="green">
-            <v-icon>mdi-heart</v-icon>
+          <v-btn fab color="primaryLight" href="https://github.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon color="brown darken-4" size="30">fab fa-github-alt</v-icon>
           </v-btn>
-          <v-btn icon color="green">
-            <v-icon>mdi-heart</v-icon>
+          <v-btn fab color="primaryLight" href="https://twitter.com/rigelpain" target="_blank" rel="noopener noreferrer">
+            <v-icon color="brown darken-4" size="30">fab fa-twitter</v-icon>
           </v-btn>
         </div>
       </div>
@@ -47,8 +46,9 @@
   </div>
 </template>
 
+
 <style module lang="scss">
-@import "~assets/variables.scss";
+@import "~/assets/variables.scss";
 
 .profile {
   width: 1000px;
@@ -135,6 +135,10 @@
         border-top: 2px $white solid;
         border-bottom: 2px $white solid;
         font-weight: bold;
+      }
+      &Account {
+        display: flex;
+        justify-content: space-evenly;
       }
     }
   }
