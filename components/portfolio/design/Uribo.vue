@@ -468,7 +468,7 @@ export default {
           step: 3,
           title: '',
           img: require('~/static/images/meow.png'),
-          text: '設定したタスクの時間が来るとYEBOとCHEBOが呼び合います。CHEBOはお仕事によってボイスが変化します。',
+          text: '設定したタスクの時間が来るとYEBOとCHEBOが呼び合います。',
           position: 'middle',
         },
         {
@@ -482,7 +482,7 @@ export default {
           step: 5,
           title: '5',
           img: require('~/static/images/meow.png'),
-          text: 'URIBOのごきげんなおしゃべりをBGMに、ササッとタスクをこなしてしまいましょう。',
+          text: 'URIBOのごきげんなおしゃべりをBGMに、ササッとタスクをこなしてしまいましょう。URIBOのボイスはCHEBOのお仕事によって変化します。',
           position: 'last',
         },
       ],
