@@ -21,7 +21,7 @@
       <section :class="$style.mainView">
         <h1 :class="$style.title" color="white">
           01 URIBO
-          <span :class="$style.titleSub">- 生活習慣を整えるロボット -</span>
+          <span :class="$style.titleSub">- 生活リズムを整えるロボット -</span>
         </h1>
         <img src="~/static/images/uribo/uribo_mainview.png" alt="">
         <p :class="$style.mainViewCopy">
@@ -29,9 +29,14 @@
           ゲームや趣味に夢中になって家事や睡眠を後回しにしがちなあなた <br>
           URIBOたちと暮らすだけで「めんどくさがり」が少しづつ治っていきます
         </p>
-        <p :class="$style.mainViewPlace">
+        <p :class="$style.mainViewDesc">
           授業「情報デザイン2」 にてチーム製作したプロダクト<br>
           テーマは「クラウドファンディングを想定した健康に関わるプロダクト」
+        </p>
+        <p :class="$style.mainViewDesc">
+          <strong>
+            はこだて未来展2021　クラウドファンディング部門準グランプリ　獲得
+          </strong>
         </p>
       </section>
 
@@ -59,7 +64,7 @@
           少しの時間留まらせることで、家事タイムのはじまりを作り出します。
         </p>
         <p :class="$style.overviewDesc">
-          こうして決まった時間に家事を続けることが生活習慣の改善へと繋がるのです。
+          こうして決まった時間に家事を続けることが生活リズムの改善へと繋がるのです。
         </p>
       </section>
       <section :class="$style.userstory" id="userstory">
@@ -121,8 +126,10 @@
       </section>
       <section :class="$style.thinkingProcess" id="process">
         <h2>URIBOができるまで</h2>
+
+
         <div :class="$style.thinkingProcessIssue">
-          <h3>1. どんな課題を解決しよう？</h3>
+          <h3>1. テーマを理解してグループ内テーマを設定しよう</h3>
           <v-timeline
             align-top
             dense
@@ -136,10 +143,9 @@
                   <strong>テーマ</strong>
                 </v-col>
                 <v-col>
-                  <strong>私生活がだらしないひとの生活習慣を整える</strong>
+                  <strong>「クラウドファンディングと健康に関わるプロダクトの提案」</strong>
                   <div class="text-caption">
-                    こもりがちな生活様式へと変化して、<br>
-                    以前より生活習慣が乱れやすいのではないか？
+                    「クラウドファンディング」と「健康」の2つがキーワード
                   </div>
                 </v-col>
               </v-row>
@@ -151,12 +157,124 @@
             >
               <v-row class="pt-1">
                 <v-col cols="3">
+                  <strong>調査</strong>
+                </v-col>
+                <v-col>
+                  <strong>クラウドファンディングとは？</strong>
+                  <div class="text-caption mb-5">
+                    起案者がインターネットを介してプロジェクトの企画を拡散し、群衆（クラウド）から少額づつ資金調達（ファンディング）をする仕組みのこと。
+                  </div>
+                  <strong>実例を見て傾向や流行を掴もう</strong>
+                  <div class="text-caption mb-3">
+                    CAMPFIREやKICKSTARTERに掲載されているプロダクトを調査しました。<br>
+                  </div>
+                  <div class="text-caption mb-3">
+                    その結果、より多くの資金を集めているのは<br>
+                    ・夢やロマンのある魅力的なプロジェクト <br>
+                    ・今まで見たこともない全く新しいプロジェクト <br>
+                    ・多くの人が抱えるニーズを実現するプロジェクト <br>
+                    でした。
+                  </div>
+                  <div class="text-caption mb-10">
+                    また、上記カテゴリから要素を抽出し<br>
+                    ・非日常、刺激的、大規模<br>
+                    ・新規性、独自性<br>
+                    ・高機能、高品質<br>
+                    なプロジェクト。とまとめました。
+                  </div>
+                  <strong>健康とは？</strong>
+                  <div class="text-caption mb-5">
+                    言葉の指す範囲が広いためブレインストーミングの後にKJ法を用いて、グループ内での健康のイメージを共有しました。
+                  </div>
+                  <v-card
+                    :class="$style.timelineCard"
+                    class="mb-5"
+                  >
+                    <v-img
+                      src="/images/uribo/process_01.jpg"
+                      :aspect-ratio="4/3"
+                    ></v-img>
+                    <v-card-subtitle>
+                      ツール：<a href="https://miro.com/app/board/o9J_lcqn4Vs=/?moveToWidget=3074457352188373310&cot=14" target="_blank">miro</a>
+                    </v-card-subtitle>
+                  </v-card>
+                  <div class="text-caption mb-5">
+                    その結果、<strong>生活リズムを整える</strong>ことが健康的な生活に繋がるとグループで結論付けました。<br>
+                    また、健康的な生活をユーザーに送らせるためには手軽さや報酬により継続させることが大事だと考え、グループ内でのプロダクトへのイメージとして生活に寄り添うもの、身に着けるものか家の中で使うようなものといった方向性にしようかと考え始めました。<br>
+                    クラウドファンディングから抽出した要素のうち、家の中で収めたいため「大規模」を、「高機能」「高品質」はアイデアにより解決するものではないので除外し、このグループでは
+                    <strong>「新規性」「独自性」を強く、「非日常」「刺激的」をアクセントに</strong>取り入れていこうと方針を決定しました。
+                  </div>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+
+            <v-timeline-item
+              color="teal darker-1"
+              small
+            >
+              <v-row class="pt-1">
+                <v-col cols="3">
+                  <strong>
+                    グループ内<br>
+                    テーマの設定
+                  </strong>
+                </v-col>
+                <v-col>
+                  <p class="mb-2"><strong>「生活リズムを整えるオリジナリティ溢れるプロダクト」</strong></p>
+                  <div class="text-caption mb-5">
+                    <p class="mb-2">
+                      <strong>解決する課題</strong><br>
+                      ・生活リズムを整える
+                    </p>
+                    <p class="mb-2">
+                      <strong>形態</strong><br>
+                      ・身に着ける（ウェアラブル）<br>
+                      ・家の中で使う（家具・雑貨）
+                    </p>
+
+
+                    <p class="mb-2">
+                      <strong>意識する要素</strong><br>
+                      ・新規性<br>
+                      ・独自性<br>
+                      ・（非日常）
+                    </p>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+          </v-timeline>
+        </div>
+
+        <div :class="$style.thinkingProcessIssue">
+          <h3>2. グループ内テーマを深堀りして具体案を出そう</h3>
+          <v-timeline
+            align-top
+            dense
+          >
+            <v-timeline-item
+              color="pink"
+              small
+            >
+              <v-row class="pt-1">
+                <v-col cols="3">
                   <strong>ペルソナ</strong>
                 </v-col>
                 <v-col>
-                  <strong>1人暮らし・後回しクセ有り・気付いたら休日が終わっている</strong>
-                  <div class="text-caption mb-2">
-                    いわゆる「だらしない人たち」
+                  <p class="mb-2"><strong>1人暮らし・後回しクセ有り・気付いたら休日が終わっている</strong></p>
+                  <div class="text-caption mb-5">
+                    <p class="text-caption mb-2">
+                      ・大学生<br>
+                      ・20歳<br>
+                      ・男性<br>
+                      ・バイト週2<br>
+                      ・食事はコンビニ弁当<br>
+                      ・頻繁に夜更かしをする<br>
+                      ・引きこもりがち<br>
+                    </p>
+                    <p class="text-caption mb-2">
+                      など性質を細かく定め、生活リズムが崩れがちな人を深掘りしました。
+                    </p>
                   </div>
                   <v-avatar>
                     <v-img
@@ -173,15 +291,76 @@
             </v-timeline-item>
 
             <v-timeline-item
+              color="orange"
+              small
+            >
+              <v-row class="pt-1">
+                <v-col cols="3">
+                  <strong>解決する課題</strong>
+                </v-col>
+                <v-col>
+                  <strong>世に出ているアイテムからアイデアの種を探す</strong>
+                  <div class="text-caption mb-5">
+                    <p>
+                      ・生活に寄り添ったアイデアの宝庫「100円ショップ」<br>
+                      ・家具全てが揃う 「ニトリ」<br>
+                      を対象に
+                    </p>
+                  </div>
+                  <div class="text-caption mb-5">
+                    <p class="mb-2">
+                      <strong>解決する課題</strong><br>
+                      ・生活リズムを整える
+                    </p>
+                    <p class="mb-2">
+                      <strong>形態</strong><br>
+                      ・身に着ける（ウェアラブル）<br>
+                      ・家の中で使う（家具・雑貨）
+                    </p>
+
+
+                    <p class="mb-2">
+                      <strong>意識する要素</strong><br>
+                      ・新規性<br>
+                      ・独自性<br>
+                      ・（非日常）
+                    </p>
+                  </div>
+                  <div class="text-caption">
+                    こもりがちな生活様式へと変化して、<br>
+                    以前より生活リズムが乱れやすいのではないか？
+                  </div>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+
+            <v-timeline-item
               color="teal darker-1"
               small
             >
               <v-row class="pt-1">
                 <v-col cols="3">
-                  <strong>課題</strong>
+                  <strong>具体的な案</strong>
                 </v-col>
                 <v-col>
-                  <strong>「めんどくさがり」ってどうやって治す？</strong>
+                  <strong>グループメンバーによる提案</strong>
+                  <v-card
+                    :class="$style.timelineCard"
+                  >
+                    <v-img
+                      src="/images/meow.png"
+                      :aspect-ratio="4/3"
+                    ></v-img>
+                    <v-card-title>
+                      ブレスト
+                    </v-card-title>
+                    <v-card-subtitle>
+                      miro
+                    </v-card-subtitle>
+                    <v-card-text>
+                      うぇい
+                    </v-card-text>
+                  </v-card>
                 </v-col>
               </v-row>
             </v-timeline-item>
@@ -209,7 +388,7 @@
                   </strong>
                   <div class="text-caption">
                     サボり癖に共通するのは、動き始めてしまえばなんてことないということ。<br>
-                    強制されるより、自発的に生活習慣を改善して欲しい。
+                    強制されるより、自発的に生活リズムを改善して欲しい。
                   </div>
                   <v-card
                     :class="$style.timelineCard"
@@ -570,11 +749,12 @@ img {
     font-size: 20px;
     line-height: 2em;
   }
-  &Place {
-    display: inline;
+  &Desc {
+    display: block;
     margin-top: 20px;
     font-size: 12px;
     line-height: 2em;
+    margin-bottom: 2em;
   }
 }
 .overview {

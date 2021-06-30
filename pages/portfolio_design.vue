@@ -38,12 +38,12 @@
         <v-stepper-content
           :step="2"
         >
-          <Uribo />
+          <Cheers />
         </v-stepper-content>
         <v-stepper-content
           :step="3"
         >
-          <Uribo />
+          <Bottle />
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
@@ -58,7 +58,7 @@ import Profile from '~/components/Profile.vue'
 
 import Uribo from '~/components/portfolio/design/Uribo.vue'
 import Cheers from '~/components/portfolio/design/Cheers.vue'
-import LightBottle from '~/components/portfolio/design/LightBottle.vue'
+import Bottle from '~/components/portfolio/design/LightBottle.vue'
 
 export default {
   data() {
@@ -107,7 +107,7 @@ export default {
     Profile,
     Uribo,
     Cheers,
-    LightBottle,
+    Bottle,
     Profile,
   },
   mounted() {

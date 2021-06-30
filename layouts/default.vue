@@ -158,7 +158,7 @@ export default {
         {
           icon: 'mdi-twitter',
           title: 'tweet',
-          to: '/'
+          to: '/portfolio_design'
         },
       ],
     }
