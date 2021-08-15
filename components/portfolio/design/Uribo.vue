@@ -77,6 +77,7 @@
             >
               <v-stepper-step
                 x-large
+                
                 editable
                 :step= "userstory.step"
               >
