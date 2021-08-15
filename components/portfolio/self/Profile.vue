@@ -123,26 +123,40 @@
       </div>
     </div>
     <div :class="$style.timeline">
-      <v-timeline dense >
+      <v-lazy
+        :options="{
+          threshold: .5
+        }"
+        transition="fade-transition"
+      >
+      <v-timeline dense align-top>
         <v-timeline-item
           v-for="(year, i) in years"
           :key="i"
           :color="year.color"
+          class="mt-15"
         >
+          <span
+            :class="`headline font-weight-bold ${year.color}--text`"
+            v-text="year.year"
+          ></span>
           <div class="py-4">
-            <span
-              :class="`headline font-weight-bold ${year.color}--text`"
-              v-text="year.year"
-            ></span>
-            <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
-              Lorem ipsum
+            <h2 :class="`headline font-weight-light ${year.color}--text`">
+              {{ year.title }}
             </h2>
             <div>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+              {{ year.text }}
             </div>
+            <v-card class="mt-5">
+              <v-img
+                src="/images/meow.png"
+                :aspect-ratio="4/3"
+              ></v-img>
+            </v-card>
           </div>
         </v-timeline-item>
       </v-timeline>
+      </v-lazy>
     </div>
   </div>
 </template>
@@ -153,8 +167,9 @@ export default {
     years: [
       {
         color: 'cyan',
-        year: '200',
+        year: '2000',
         tiitle: '生まれ',
+        text: '',
       },
       {
         color: 'green',
@@ -169,8 +184,16 @@ export default {
         year: '1990',
       },
       {
-        color: 'orange',
+        color: 'green',
         year: '2000',
+        title: '幼少期',
+        text: '農家の祖父母に遊んでもらっていました',
+      },
+      {
+        color: 'green',
+        year: '2000',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
       },
     ],
   }),
