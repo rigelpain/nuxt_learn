@@ -123,39 +123,44 @@
       </div>
     </div>
     <div :class="$style.timeline">
-      <v-lazy
-        :options="{
-          threshold: .5
-        }"
-        transition="fade-transition"
-      >
+    <v-lazy
+      transition="scroll-y-reverse-transition"
+    >
       <v-timeline dense align-top>
-        <v-timeline-item
-          v-for="(year, i) in years"
-          :key="i"
-          :color="year.color"
-          class="mt-15"
-        >
-          <span
-            :class="`headline font-weight-bold ${year.color}--text`"
-            v-text="year.year"
-          ></span>
-          <div class="py-4">
-            <h2 :class="`headline font-weight-light ${year.color}--text`">
-              {{ year.title }}
-            </h2>
-            <div>
-              {{ year.text }}
+          <v-timeline-item
+            v-for="(year, i) in years"
+            :key="i"
+            :color="year.color"
+            class="mt-15"
+          >
+            <span
+              :class="`headline font-weight-bold ${year.color}--text`"
+              v-text="year.year"
+            ></span>
+            <div class="py-4">
+              <h2 :class="`headline font-weight-light ${year.color}--text`">
+                {{ year.title }}
+              </h2>
+              <div>
+                {{ year.text }}
+              </div>
+              <v-row>
+                <v-col
+                  v-for="(image, i) in year.images"
+                  :key="i"
+                >
+                  <v-card class="mt-5">
+                    <v-img
+                      :src="image"
+                      :aspect-ratio="4/3"
+                    ></v-img>
+                    <v-card-title>カード</v-card-title>
+                  </v-card>
+                </v-col>
+              </v-row>
             </div>
-            <v-card class="mt-5">
-              <v-img
-                src="/images/meow.png"
-                :aspect-ratio="4/3"
-              ></v-img>
-            </v-card>
-          </div>
-        </v-timeline-item>
-      </v-timeline>
+          </v-timeline-item>
+        </v-timeline>
       </v-lazy>
     </div>
   </div>
@@ -164,36 +169,73 @@
 <script>
 export default {
   data: () => ({
+    isActive: false,
     years: [
       {
         color: 'cyan',
         year: '2000',
-        tiitle: '生まれ',
-        text: '',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/meow.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
       },
       {
         color: 'green',
         year: '1970',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
       },
       {
         color: 'pink',
         year: '1980',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
       },
       {
         color: 'amber',
         year: '1990',
-      },
-      {
-        color: 'green',
-        year: '2000',
-        title: '幼少期',
-        text: '農家の祖父母に遊んでもらっていました',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
       },
       {
         color: 'green',
         year: '2000',
         title: '出身',
         text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
+      },
+      {
+        color: 'green',
+        year: '2000',
+        title: '出身',
+        text: '北海道帯広市で生まれました',
+        images: [
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+          require('~/static/images/discord.png'),
+        ],
       },
     ],
   }),
@@ -207,11 +249,12 @@ export default {
 .self {
   display: flex;
   width: 100%;
-  margin: 100px 0;
+  margin: 30px 0;
 }
 
 .timeline {
   margin-left: 700px;
+  width: 100%;
 }
 
 .profile {
@@ -296,7 +339,7 @@ export default {
       padding: 30px 50px;
       .skills {
         position: absolute;
-        bottom: 100px;
+        bottom: 115px;
         right: -80px;
         transform: rotateZ(-90deg);
         font-size: 4rem;
