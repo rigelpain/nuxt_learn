@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/self_introduction", {data:[{}],fetch:{},mutations:void 0});
